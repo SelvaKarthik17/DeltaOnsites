@@ -42,30 +42,65 @@ do
 
 		value=$(echo $input | awk -F ":" '{print $2}')
 
-		cat final_list.txt | grep $value
+		file="final_list.txt"
 
-	#rowvalue=$(cat final_list.txt | grep $value )
-
-	#echo $rowvalue
+		while IFS= read -r line
+		do
+	          var=$(echo "$line" | awk -F " " '{print $2}')
+		   
+	             if [[ $var == *"$value"* ]]; then
+			echo "$line"
+		     fi
+		done < "$file"
+		 
 
 	elif [[ $input == *"name"* ]]; then
 	
 		value=$(echo $input | awk -F ":" '{print $2}')
 
-		cat final_list.txt | grep $value
+		file="final_list.txt"
+
+		while IFS= read -r line
+		do
+	          var=$(echo "$line" | awk -F " " '{print $3}')
+		   
+	             if [[ $var == *"$value"* ]]; then
+			echo "$line"
+		     fi
+		done < "$file"
+		 
+
 
 	elif [[ $input == *"email"* ]]; then
 	
 		value=$(echo $input | awk -F ":" '{print $2}')
 
-		cat final_list.txt | grep $value
+		file="final_list.txt"
+
+		while IFS= read -r line
+		do
+	          var=$(echo "$line" | awk -F " " '{print $1}')
+		   
+	             if [[ $var == *"$value"* ]]; then
+			echo "$line"
+		     fi
+		done < "$file"
 
 
 	elif [[ $input == *"branch"* ]]; then
 	
 		value=$(echo $input | awk -F ":" '{print $2}')
 
-		cat final_list.txt | grep $value
+		file="final_list.txt"
+
+		while IFS= read -r line
+		do
+	          var=$(echo "$line" | awk -F " " '{print $4}')
+		   
+	             if [[ $var == *"$value"* ]]; then
+			echo "$line"
+		     fi
+		done < "$file"
 
 
 
@@ -73,13 +108,33 @@ do
 	
 		value=$(echo $input | awk -F ":" '{print $2}')
 
-		cat final_list.txt | grep $value
+		file="final_list.txt"
+
+		while IFS= read -r line
+		do
+	          var=$(echo "$line" | awk -F " " '{print $6}')
+		   
+	             if [[ $var == *"$value"* ]]; then
+			echo "$line"
+		     fi
+		done < "$file"
 
 	elif [[ $input == *"phoneno"* ]]; then
 	
-		value=$(echo $input | awk -F ":" '{print $2}')
-	
-		cat final_list.txt | grep $value 
+		value=$(echo $input | awk -F ":" '{print $2}')	
+
+		file="final_list.txt"
+
+		while IFS= read -r line
+		do
+	          var=$(echo "$line" | awk -F " " '{print $5}')
+		   
+	             if [[ $var == *"$value"* ]]; then
+			echo "$line"
+		     fi
+		done < "$file"
+
+		
 	else
 		echo "invalid input..."
 
