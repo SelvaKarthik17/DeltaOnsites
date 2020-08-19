@@ -27,6 +27,7 @@ mv tmp4.txt file3.txt
 
 join -1 3 -2 1  temp.txt file3.txt >final_list.txt
 
+rm temp.txt
 
 
 
