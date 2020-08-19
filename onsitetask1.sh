@@ -42,7 +42,7 @@ do
 
 		value=$(echo $input | awk -F ":" '{print $2}')
 
-		cat final_list.txt | grep " $value "
+		cat final_list.txt | grep $value
 
 	#rowvalue=$(cat final_list.txt | grep $value )
 
@@ -52,20 +52,20 @@ do
 	
 		value=$(echo $input | awk -F ":" '{print $2}')
 
-		cat final_list.txt | grep " $value "
+		cat final_list.txt | grep $value
 
 	elif [[ $input == *"email"* ]]; then
 	
 		value=$(echo $input | awk -F ":" '{print $2}')
 
-		cat final_list.txt | grep "$value "
+		cat final_list.txt | grep $value
 
 
 	elif [[ $input == *"branch"* ]]; then
 	
 		value=$(echo $input | awk -F ":" '{print $2}')
 
-		cat final_list.txt | grep " $value "
+		cat final_list.txt | grep $value
 
 
 
@@ -73,13 +73,13 @@ do
 	
 		value=$(echo $input | awk -F ":" '{print $2}')
 
-		cat final_list.txt | grep " $value "
+		cat final_list.txt | grep $value
 
 	elif [[ $input == *"phoneno"* ]]; then
 	
 		value=$(echo $input | awk -F ":" '{print $2}')
 	
-		cat final_list.txt | grep " $value "
+		cat final_list.txt | grep $value 
 	else
 		echo "invalid input..."
 
